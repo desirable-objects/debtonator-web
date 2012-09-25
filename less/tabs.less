@@ -1,0 +1,127 @@
+/*==========================================*/
+/*=== TABS ===*/
+/*==========================================*/
+ul.tabs {
+	display: block;
+	padding: 0;
+	border-bottom: solid 1px #0090bf;
+	margin-top: 5px;
+	text-align: center;
+	li {
+		display: block;
+		width: auto;
+		height: 54px;
+		padding: 0;
+		float: left;
+		margin-bottom: 0;
+		margin-right: 5px;
+		a {
+			display: block;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: 700;
+			text-shadow: 0 1px 0 #777;
+			color: white;
+			width: auto;
+			width: 340px;
+			height: 55px;
+			padding: 0px 20px;
+			line-height: 57px;
+			border: solid 1px #0090bf;
+			border-bottom: 1px solid #00a2d8;
+			border-width: 1px 0 0 1px;
+			margin: -2px 0 0 0;
+			background: #00a2d8;
+			box-shadow: 0 -5px 15px -9px #000 inset;
+			.border-radius(2px 2px 0 0);
+			&.active {
+				height: 54px;
+				line-height: 54px;
+				position: relative;
+				top: -4px;
+				padding-top: 4px;
+				border-right-width: 1px;
+				margin: 0px -1px 0 0;
+				box-shadow: none;
+			}
+		}
+		#tab_2 {
+			background: #96e162;
+			border-color: #85c757;
+		}
+	}
+}
+
+#tab_border {
+	background: #00a2d8;
+	width: 792px;
+	height: 10px;
+	border: 1px solid #0090bf;
+	border-width: 0 1px 0 1px;
+	margin: 0;
+}
+
+.green {
+	background: #96e162!important;
+}
+.green_border {
+	border-color: #85c757!important;
+}
+ul.tabs_content {
+	margin: 1.5em 0 0 0;
+	display: block;
+	text-align: center;
+	> li {
+		padding: 0;
+		.transition(all 0.1s);
+	}
+	.grid_3 {
+		margin: 0;
+		padding: 15px 0;
+		width: 262px;
+		border-left: 1px solid #e2e2e2;
+		color: #668e9c;
+		
+	}
+	.grid_4 {
+		margin: 0 0 0 -1px;
+		padding: 15px 0;
+		width: 395px;
+		border-left: 1px solid #e2e2e2;
+		color: #668e9c;
+		
+	}
+	.h_tab {
+		color: #4da013;
+		text-decoration: underline;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.no_brd {
+		border: none!important;
+	}
+	.row {
+		width: 100%;
+		margin: 0;
+		margin-bottom: -4px;
+		border-top: 1px solid #e2e2e2;
+	}
+	&.contained {
+		margin: 0px 0 0em 0;
+	}
+	&.contained li {
+		border: 1px solid #e2e2e2;
+		border-top: none;
+		.border-radius(0 0 3px 3px);
+	}
+}
+ul.tabs_content > li { display:none; }
+ul.tabs_content > li.active { display: block; }
+
+// IE Conditionals
+.lt-ie9 .tabs_content li div div {
+	float: left;
+}
+.lt-ie9 footer div div {
+	float:left;
+}

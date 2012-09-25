@@ -1,0 +1,241 @@
+/*==========================================*/
+/*=== TYPOGRAPHY.less ===*/
+/*=== TABLE OF CONTENTS ===*/
+/*==========================================
+:: FONT STACKS
+:: BASE
+:: PARAGRAPHS
+:: HEADINGS
+:: LISTS
+:: QUOTES
+:: LINKS
+:: HELPER CLASSES
+*/
+
+
+/*=== FONT STACKS ===*/
+#font {
+	// #font .shorthand
+	.shorthand(@weight: normal, @size: 16px, @lineHeight: @baseLineHeight) {
+		font-size: @size;
+		font-weight: @weight;
+		line-height: @lineHeight;
+	}
+	// #font .sans-serif
+	.sans-serif(@weight: normal, @size: 16px, @lineHeight: @baseLineHeight) {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: @size;
+		font-weight: @weight;
+		line-height: @lineHeight;
+	}
+	// #font .serif
+	.serif(@weight: normal, @size: 16px, @lineHeight: @baseLineHeight) {
+		font-family: "Georgia", Times New Roman, Times, serif;
+		font-size: @size;
+		font-weight: @weight;
+		line-height: @lineHeight;
+	}
+	// #font .monospace
+	.monospace(@weight: normal, @size: 12px, @lineHeight: @baseLineHeight) {
+		font-family: "Monaco", Courier New, monospace;
+		font-size: @size;
+		font-weight: @weight;
+		line-height: @lineHeight;
+	}
+}
+
+/*=== BASE ===*/
+html {
+	#font > .sans-serif(normal, @baseFontSize, @baseLineHeight);
+}
+body, select, input, textarea {
+		color: @grayDark;
+}
+/*=== PARAGRAPHS ===*/
+p,.p {
+	#font > .serif(normal, @baseFontSize, @baseLineHeight);
+	margin-bottom: @baseLineHeight;
+	small,.small {
+		font-size: 87.5%;
+		line-height: 1;
+		font-weight: inherit;
+	}
+}
+/*p+p{
+	text-indent:2em;
+	margin-top:-1.5em;
+}*/
+
+/*=== HEADINGS ===*/
+h1, h2, h3, h4, h5, h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+	font-weight: bold;
+	//color: @accentColor;
+	small, .small {
+		color: @grayLight;
+		font-size:75%;
+		font-weight: normal;
+	}
+}
+h1,.h1{
+	font-size: round(@baseFontSize * 4.25);
+	line-height: @baseLineHeight * 3;
+	margin-top: @baseLineHeight;
+	margin-bottom: @baseLineHeight * 2;
+	&.lrg {
+		font-size: round(@baseFontSize * 6.875);
+		line-height: @baseLineHeight * 5;
+		margin-top: @baseLineHeight;
+		margin-bottom: @baseLineHeight * 2;
+	}
+}
+h2,.h2{
+	font-size: round(@baseFontSize * 2.625);
+	line-height: @baseLineHeight * 2;
+	margin-top: @baseLineHeight * 2;
+	margin-bottom: @baseLineHeight;
+}
+h3,.h3{
+	font-size: round(@baseFontSize * 1.625);
+	line-height: @baseLineHeight *2;
+	margin-top: @baseLineHeight;
+	margin-bottom: 0;
+}
+h4,.h4{
+	font-size: round(@baseFontSize / 0.8);
+	line-height: @baseLineHeight;
+	margin-top: @baseLineHeight *2;
+	margin-bottom: 0;
+}
+h5,.h5 {
+	font-size: @baseFontSize;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: @baseLineHeight;
+	font-weight:normal;
+}
+h6,.h6 {
+	font-size: round(80%);
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: @baseLineHeight;
+	font-weight:normal;
+}
+
+/*=== Set font for forms ===*/
+label,
+input,
+select,
+textarea {
+	#font > .sans-serif(normal,13px,normal);
+}
+
+b,strong {
+		font-weight:bold;
+		font-style:inherit;
+}
+q,i,em,cite {
+		font-weight:inherit;
+		font-style:italic;
+}
+dfn { font-style: italic; }
+mark { background: #ff0; color: #000; }
+ins,del{ text-decoration:line-through; }
+
+
+
+/*==========================================*/
+/*=== LISTS ===*/
+/*==========================================*/
+/*=== Normal (for want of a better word, lists) ===*/
+ul.nrml, ol.nrml {
+	margin: 0 0 1.5em 45px;
+	font-size: @baseFontSize;
+	ul, ol {
+		margin: 0 0 0 45px;
+	}
+	ul {
+		list-style-type: circle;
+		ul {
+			list-style-type: square;
+		}
+	}
+	ol {
+		list-style-type: upper-roman;
+		ol {
+			list-style-type: lower-roman;
+		}
+	}
+	li {
+		line-height: @baseLineHeight;
+	}
+}
+
+ul.nrml { list-style-type: disc }
+ol.nrml { list-style-type: decimal }
+
+/*=== DEFINITION LISTS ===*/
+dl {
+	margin-bottom: @baseLineHeight;
+	dt, dd {
+		line-height: @baseLineHeight;
+	}
+	dt {
+		font-weight: bold;
+	}
+	dd {
+		margin-left: @baseLineHeight / 2;
+	}
+}
+
+
+
+/*==========================================*/
+/*=== QUOTES ===*/
+/*==========================================*/
+blockquote {
+	margin: @baseLineHeight 0;
+	border-left: 5px solid #eee;
+	padding: 15px;
+	p {
+		#font > .shorthand(300,20px,@baseLineHeight);
+		margin-bottom: 0;
+		b {
+			display: block;
+			&:before {
+				content: '\2014 \00A0 ';
+			}
+		}
+	}
+
+}
+
+
+
+/*==========================================*/
+/*=== LINKS ===*/
+/*==========================================*/
+a:link,
+a:visited {
+	color: @linkColor;
+	text-decoration: none;
+}
+a:link { -webkit-tap-highlight-color: @linkColor; }
+a:hover { color: @linkColorHover; }
+a:hover, a:active { outline: none; }
+a:focus {
+	text-shadow: #61a0ff 0 0 7px;
+	outline: thin dotted;
+}
+a.more_link:after,
+a.more_link::after{
+	content:" »";
+}
+
+
+
+/*==========================================*/
+/*=== HELPER CLASSES ===*/
+/*==========================================*/
+.text_left		{ text-align:left; }
+.text_right		{ text-align:right; }
+.text_center, .text_centre	{ text-align:center; }
