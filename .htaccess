@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^features /#/features [QSA,L]
+RewriteRule ^pricing /#/pricing [QSA,L]
+RewriteRule ^partners /#/partners [QSA,L]
+RewriteRule ^contact /#/contact [QSA,L]
+RewriteRule ^terms-and-conditions /terms-and-conditions.html [QSA,L]
+RewriteRule ^privacy-policy /privacy-policy.html [QSA,L]
