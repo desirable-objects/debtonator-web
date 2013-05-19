@@ -1,8 +1,10 @@
 Options +FollowSymLinks
 RewriteEngine On
-RewriteRule ^/features /index.html/#/features
-RewriteRule ^/pricing /index.html/#/pricing
-RewriteRule ^/partners /index.html/#/partners
-RewriteRule ^/contact /index.html/#/contact
-RewriteRule ^/terms-and-conditions /terms-and-conditions.html
-RewriteRule ^/privacy-policy /privacy-policy.html
+RewriteBase /
+RewriteRule ^terms-and-conditions /terms-and-conditions.html [R,L,NE]
+RewriteRule ^privacy-policy /privacy-policy.html [R,L,NE]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ /#/$1 [R,L,NE]
+
+
