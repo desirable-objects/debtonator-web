@@ -4,22 +4,20 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 <url>
   <loc>http://debtonator.io/</loc>
 </url>
 <url>
-  <loc>http://debtonator.io/features
+  <loc>http://debtonator.io/features</loc>
 </url>
 <url>
-  <loc>http://debtonator.io/pricing
+  <loc>http://debtonator.io/pricing</loc>
 </url>
 <url>
-  <loc>http://debtonator.io/partners
+  <loc>http://debtonator.io/partners</loc>
 </url>
 <url>
-  <loc>http://debtonator.io/contact
+  <loc>http://debtonator.io/contact</loc>
 </url>
 <url>
   <loc>http://debtonator.io/terms-and-conditions</loc>
