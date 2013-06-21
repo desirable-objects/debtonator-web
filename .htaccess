@@ -5,6 +5,9 @@ RewriteRule ^terms-and-conditions$ /terms-and-conditions.html [R,L,NE]
 RewriteRule ^privacy-policy$ /privacy-policy.html [R,L,NE]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)$ /#/$1 [R,L,NE]
+RewriteRule ^features$ /#/features [R,L,NE]
+RewriteRule ^partners$ /#/partners [R,L,NE]
+RewriteRule ^pricing$ /#/pricing [R,L,NE]
+RewriteRule ^contact$ /#/contactus [R,L,NE]
 
 
